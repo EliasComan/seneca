@@ -1,6 +1,7 @@
 import './App.css';
 import CartWidget from './Components/CartWidget/CartWidget';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import Contador from './Components/contador/Contador.jsx'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
     </header>
  
     <ItemListContainer greeting='Bienvenidos!' />
+    <Contador cantidad={10}/>
     </div>
   );
 }
