@@ -1,4 +1,6 @@
 import './App.css';
+import CartWidget from './Components/CartWidget/CartWidget';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -22,11 +24,15 @@ function App() {
                 <p className="nav-link" >About us</p>
               </li>
             </ul>
-          
+            <span className="navbar-text">
+             <CartWidget/>
+            </span>
           </div>
         </div>
       </nav>
     </header>
+ 
+    <ItemListContainer greeting='Bienvenidos!' />
     </div>
   );
 }
