@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Contador = ( { cantidad }) =>{
-  const [cant, setCant] = useState(cantidad)
+const Contador = ( { cantidad,  inicial }) =>{
+  const [cant, setCant] = useState(inicial)
 
   const handleClickMinus =() =>{
    cant > 0 ? setCant(cant-1)  : document.getElementById('buttonminus').disable= true ;

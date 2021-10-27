@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <ItemListContainer greeting='Bienvenidos!' />
-      <Contador cantidad={10}/>
+      <Contador inicial = {1} cantidad={10}/>
     </div>
   );
 }
