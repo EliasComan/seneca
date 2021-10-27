@@ -5,10 +5,10 @@ const Contador = ( { cantidad }) =>{
   const [cant, setCant] = useState(cantidad)
 
   const handleClickMinus =() =>{
-   return setCant(cant-1)
+   cant >= 0 ?? setCant(cant-1) 
   }
   const handleClickPlus = () =>{
-  return    setCant(cant+1)
+   cant <= cantidad ?? setCant(cant+1)
   }
   
     return(
