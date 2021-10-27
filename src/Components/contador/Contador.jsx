@@ -5,17 +5,17 @@ const Contador = ( { cantidad }) =>{
   const [cant, setCant] = useState(cantidad)
 
   const handleClickMinus =() =>{
-   cant >= 0 ?? setCant(cant-1) 
+   cant > 0 ? setCant(cant-1)  : document.getElementById('buttonminus').disable= true ;
   }
   const handleClickPlus = () =>{
-   cant <= cantidad ?? setCant(cant+1)
+   cant < cantidad ? setCant(cant+1) :document.getElementById('buttonplus').disable= true ;
   }
   
     return(
             <>
-            <button onClick={ handleClickMinus}>-</button>
+            <button id = 'buttonminus' onClick={ handleClickMinus}>-</button>
             {cant}
-            <button onClick= { handleClickPlus}>+</button>
+            <button id ='buttonplus' onClick= { handleClickPlus}>+</button>
             </>
     )
 }
