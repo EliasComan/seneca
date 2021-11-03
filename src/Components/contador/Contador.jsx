@@ -8,7 +8,7 @@ const Contador = ( { cantidad,  inicial }) =>{
    cant > 0 ? setCant(cant-1)  : document.getElementById('buttonminus').disable= true ;
   }
   const handleClickPlus = () =>{
-   cant < cantidad ? setCant(cant+1) :document.getElementById('buttonplus').disable= true ;
+   cant < cantidad ? setCant(cant+1) : document.getElementById('buttonplus').disable = true ;
   }
   
     return(
