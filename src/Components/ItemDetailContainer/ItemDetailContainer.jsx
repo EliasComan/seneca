@@ -18,22 +18,26 @@ const ItemDetailContainer = () => {
 
     getItems.then(item => {
         const itemfind = item.find(i => i.id === 2)
-        console.log(itemfind)
         setItems(itemfind)
         setRender(true)
 })
  
     },[])
-    console.log(item);
     
     return(
         <>
-        {!render} ?
-        <ItemDetail nombre= {item.nombre} key={item.id} precio={item.precio} cantidad = {item.stock}/>
+        {!render ? <h1>Cargando...</h1>
          :
-         {<h1>Cargando...</h1>}
-       
-        </>
+        
+          <ItemDetail
+            nombre={item.nombre}
+            key={item.id}
+            precio={item.precio}
+            cantidad={item.stock}
+            imagen={item.imagen.vitruvio}
+          />
+        }
+      </>
 
 )}
 
