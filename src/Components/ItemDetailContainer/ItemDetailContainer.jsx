@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import data from '../data/data'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 
@@ -10,13 +11,15 @@ const ItemDetailContainer = () => {
    useEffect(() => {
     const getItems =  new Promise((res,rej) => {
         setTimeout(() => {
-            res(data.find(i => i.id === 2))
+            res(data)
             rej(errr => {console.log(errr)})}, 3000);
         
     })
 
     getItems.then(item => {
-        setItems(item)
+        const itemfind = item.find(i => i.id === 2)
+        console.log(itemfind)
+        setItems(itemfind)
         setRender(true)
 })
  
@@ -26,9 +29,9 @@ const ItemDetailContainer = () => {
     return(
         <>
         {!render} ?
-        {item}
+        <ItemDetail nombre= {item.nombre} key={item.id} precio={item.precio} cantidad = {item.stock}/>
          :
-         {<h1>Cargando..</h1>}
+         {<h1>Cargando...</h1>}
        
         </>
 
