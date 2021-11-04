@@ -26,9 +26,9 @@ const ItemDetailContainer = () => {
     
     return(
         <>
-        {!render ? <h1>Cargando...</h1>
+        {!render ? 
+        <h1>Cargando...</h1>
          :
-        
           <ItemDetail
             nombre={item.nombre}
             key={item.id}
