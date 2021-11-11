@@ -4,7 +4,6 @@ import '../Item/Item.css'
 
 const Item = ({nombre , imagen, id,category}) => {
    
-   console.log(category);
     return(
       
     
