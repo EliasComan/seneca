@@ -17,6 +17,7 @@ Despues situado en la carpeta usar el comando npm install en tu terminal
 
 Por ultimo npm start en tu terminal.
 
+Ir al navegador y copiar este link : http://localhost:3000/
 
 ## DESCRIPCION
 
