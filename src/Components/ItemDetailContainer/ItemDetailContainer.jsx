@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
 
     const [render, setRender] = useState(false)
     const [item, setItems] = useState();
-    console.log(id)
    
    useEffect(() => {
     const getItems =  new Promise((res,rej) => {
@@ -22,11 +21,11 @@ const ItemDetailContainer = () => {
 
     getItems.then(item => {
         const itemfind = item.find(i => i.id === parseInt(id) )
-        console.log(itemfind)
         setItems(itemfind)
         setRender(true)
 })
  
+  return(null)
     },[id])
     
     return(
@@ -39,7 +38,7 @@ const ItemDetailContainer = () => {
             key={item.id}
             precio={item.precio}
             cantidad={item.stock}
-            imagen={item.imagen.vitruvio}
+            imagen={item.imagen}
           />
         }
       </>

@@ -2,6 +2,7 @@
 const data = [{
     nombre: 'Lazy lion #0',
     id:0, 
+    category:'lazylion',
     stock:12, 
     precio:1, 
     imagen:'https://lh3.googleusercontent.com/oQS6j-P2J91FHl7rAk36_caD3XboPdWX3ppayidrdLbxPE7g1NW3vk9BPtPHsTRfFxC-w0pO8THoYcwjRiN9hzOAe4nOqFC_1KxlZz8'

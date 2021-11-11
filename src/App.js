@@ -13,7 +13,7 @@ function App() {
         <Route exact path='/'>
           <ItemListContainer greeting='Bienvenidos'/>
         </Route>
-        <Route exact path='/:id'>
+        <Route exact path='/:nombre/:id'>
           <ItemDetailContainer/>
         </Route>
       </Switch>
