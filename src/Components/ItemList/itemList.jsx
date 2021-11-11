@@ -11,7 +11,7 @@ const getItems =  new Promise((res,rej) => {
     setTimeout(() => {
      res(dataItems.map( item => {return(
      <Item key={item.id}  id= {item.id} nombre= {item.nombre} imagen ={item.imagen}></Item>)}))
-     
+     rej(err => {console.log(err)})
     }, 2000);
 
 })

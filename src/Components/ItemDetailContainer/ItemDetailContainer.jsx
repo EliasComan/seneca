@@ -7,6 +7,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
+
     const [render, setRender] = useState(false)
     const [item, setItems] = useState();
     console.log(id)

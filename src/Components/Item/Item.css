@@ -6,6 +6,3 @@
     filter:grayscale(0%) !important;
 }
 
-.btn :hover{
-    background-color: red !important;
-}
