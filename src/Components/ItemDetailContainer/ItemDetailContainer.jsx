@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import data from '../data/data'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 
 const ItemDetailContainer = () => {
+    const { id } = useParams();
     const [render, setRender] = useState(false)
     const [item, setItems] = useState();
+    console.log(id)
    
    useEffect(() => {
     const getItems =  new Promise((res,rej) => {
@@ -17,12 +20,13 @@ const ItemDetailContainer = () => {
     })
 
     getItems.then(item => {
-        const itemfind = item.find(i => i.id === 2)
+        const itemfind = item.find(i => i.id === parseInt(id) )
+        console.log(itemfind)
         setItems(itemfind)
         setRender(true)
 })
  
-    },[])
+    },[id])
     
     return(
         <>

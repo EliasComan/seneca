@@ -7,9 +7,10 @@ const ItemList = (  ) => {
 const [item, setItems] = useState();
 const dataItems = data;
 const getItems =  new Promise((res,rej) => {
+
     setTimeout(() => {
      res(dataItems.map( item => {return(
-     <Item key={item.id} nombre= {item.nombre} imagen ={item.imagen.vitruvio}></Item>)}))
+     <Item key={item.id}  id= {item.id} nombre= {item.nombre} imagen ={item.imagen.vitruvio}></Item>)}))
      
     }, 2000);
 
