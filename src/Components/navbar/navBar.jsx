@@ -26,10 +26,10 @@ const NavBar = () =>{
                 <Link to='/hashmask' className="nav-link" >Hashmask</Link>
               </li>
               <li className="nav-item">
-                <Link to='/hashmask' className="nav-link" >Bored-ape</Link>
+                <Link to='/boredape' className="nav-link" >Bored-ape</Link>
               </li>
               <li className="nav-item">
-                <Link to='/hashmask' className="nav-link" >Lost-Poets</Link>
+                <Link to='/lostpoets' className="nav-link" >Lost-Poets</Link>
               </li>
             </ul>
             <span className="cart-span">
