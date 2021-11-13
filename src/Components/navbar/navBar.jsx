@@ -25,6 +25,12 @@ const NavBar = () =>{
               <li className="nav-item">
                 <Link to='/hashmask' className="nav-link" >Hashmask</Link>
               </li>
+              <li className="nav-item">
+                <Link to='/hashmask' className="nav-link" >Bored-ape</Link>
+              </li>
+              <li className="nav-item">
+                <Link to='/hashmask' className="nav-link" >Lost-Poets</Link>
+              </li>
             </ul>
             <span className="cart-span">
              <CartWidget/>
