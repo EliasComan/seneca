@@ -30,18 +30,18 @@ useEffect(() => {
     
     return(
         <>
-        {!render ? 
-        <h1>Cargando...</h1>
-         :
-          <ItemDetail
-            nombre={item.nombre}
-            key={item.id}
-            precio={item.precio}
-            cantidad={item.stock}
-            imagen={item.imagen}
-          />
-        }
-      </>
+          {!render ? 
+            <h1>Cargando...</h1>
+            :
+              <ItemDetail
+                nombre={item.nombre}
+                key={item.id}
+                precio={item.precio}
+                cantidad={item.stock}
+                imagen={item.imagen}
+              />
+          }
+        </>
 
 )}
 
