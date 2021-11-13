@@ -71,6 +71,55 @@ const data = [{
     imagen: 'https://lh3.googleusercontent.com/QU4ineh16fbq3rI60usF3rm7LBWZYayRgSDVoEl2ZU-nooQNO2BR8hGi4q6mzoaT8xXZs1GHes2GBGbpK_NDkuqObcj0egMBsFQo',
     stock:12,
     precio:6
+},
+{
+    nombre: 'whale',
+    id:11,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/eG3ad_cCJP5ayMJ9YZ4-vU5um1d_ZHlYeCpbtskPMPHK6P748WGQAY053XXiNqE2V-0w1rjgHhiQ5IUcyrVLsK-7BETK1xxcqMzMEA',
+    stock:12,
+    precio:6
+},
+{
+    nombre: 'trump',
+    id:12,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/6m-4wKToLflNSyNkIRQasgiRxwUsBCMReyq2rQqEUYoOVKQ2ZzczKnLlW6ck3bkaYuFINmpQlrF7c30IIK_VQaAiP-2wbEODDH7WIVg',
+    stock:12,
+    precio:6
+}
+,
+{
+    nombre: 'mickey',
+    id:13,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/vPsTBsbLob9l5roYQ_p4k1kor2uM57DSyNh-8IAcZvskb-VeGHiU7JexqipxQDHGutu6crAyLqm-IlyWb6utto-uYG3N0dPSDs0Tegs',
+    stock:12,
+    precio:6
+},
+{
+    nombre: '100',
+    id:14,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/muyPvBP39qIWHXEHcwbjk9B-DH5TpqMYQcWHabchaCKQebuaKjUug2uLss2XelG8YMvwwZlWg8HbhYKCn3o64ibVPIxDhCYIeXs1',
+    stock:12,
+    precio:6
+},
+{
+    nombre: 'Hashmask #1000',
+    id:15,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/U_2h3N-8h4L3b90Z_Lmhq77Bgj2ABrw4LszPAmw0ie-gaJh5d9tFkCLXqlXoGzbqvBEqSRYeJcZjOBmmMTtHo2haeBxPKIjNQtoDhA',
+    stock:12,
+    precio:6
+},
+{
+    nombre: 'Deliverator',
+    id:16,
+    category:'hashmask',
+    imagen: 'https://lh3.googleusercontent.com/0hvSaFc8HIg2sh1bhZyVS9DHTo0GXXPNw_B9idKzSlpGav6dR24XeR8zOyacqTDGzHo0i3W3hVXO6MRsvNsVTC7dywNc06lmnaXx',
+    stock:12,
+    precio:6
 }]
 
 export default data;

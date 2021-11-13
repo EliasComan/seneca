@@ -6,12 +6,12 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 const ItemDetailContainer = () => {
-    const { id } = useParams();
+  
+  const [render, setRender] = useState(false)
+  const [item, setItems] = useState();
+  const { id } = useParams();
 
-    const [render, setRender] = useState(false)
-    const [item, setItems] = useState();
-   
-   useEffect(() => {
+useEffect(() => {
     const getItems =  new Promise((res,rej) => {
         setTimeout(() => {
             res(data)
