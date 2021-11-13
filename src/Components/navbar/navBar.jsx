@@ -20,10 +20,10 @@ const NavBar = () =>{
                 <Link to='/' className="nav-link active" aria-current="page" >Home</Link>
               </li>
               <li className="nav-item">
-                <Link to='/' className="nav-link" >Shop</Link>
+                <Link to='/lazylion' className="nav-link" >Lazy-lions</Link>
               </li>
               <li className="nav-item">
-                <p className="nav-link" >About us</p>
+                <Link to='/hashmask' className="nav-link" >Hashmask</Link>
               </li>
             </ul>
             <span className="cart-span">

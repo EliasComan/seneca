@@ -18,7 +18,6 @@ const ItemList = (  ) => {
 })
     getItems.then(item => {
        const getItems = item.filter( item => item.category === category)
-       console.log(getItems)
         getItems.length  === 0 ? setItems(item)  : setItems(getItems)
         ;})
         .finally(() => {setRender(true)})

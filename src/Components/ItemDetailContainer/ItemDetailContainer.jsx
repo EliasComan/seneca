@@ -15,7 +15,7 @@ useEffect(() => {
     const getItems =  new Promise((res,rej) => {
         setTimeout(() => {
             res(data)
-            rej(errr => {console.log(errr)})}, 3000);
+            rej(errr => {console.log(errr)})}, 2000);
         
     })
 
