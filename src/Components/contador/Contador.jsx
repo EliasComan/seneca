@@ -22,8 +22,7 @@ const Contador = ( { cantidad,  inicial, onAdd } ) =>{
                   <button id = 'buttonminus' className='btn btn-dark' onClick={ handleClickMinus }>-</button>
                     <p>{cant}</p>
                   <button id ='buttonplus' className='btn btn-dark' onClick= { handleClickPlus }>+</button>
-                
-                <button className='btn btn-dark' onClick={() =>{onAdd(cant); setRender(false)}}>Agregar al carrito</button>
+                  <button className='btn btn-dark' onClick={() =>{onAdd(cant); setRender(false)}}>Agregar al carrito</button>
                 </>
                 :
               <>

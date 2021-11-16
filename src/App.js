@@ -4,6 +4,7 @@ import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/navbar/navBar.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './Components/Footer/Footer'
+import Cart from './Components/cart/Cart'
 import '../src/App.css'
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Switch>
+        <Route exact path='/cart'>
+          <Cart/>
+        </Route>
         <Route exact path='/'>
           <ItemListContainer greeting='Bienvenidos'/>
         </Route>

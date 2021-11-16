@@ -9,7 +9,7 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
        setCant(cant)
        console.log(cant)
    }
-    
+    console.log(cant)
     return(
 
     <>
