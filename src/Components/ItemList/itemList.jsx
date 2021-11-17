@@ -22,8 +22,8 @@ const ItemList = (  ) => {
             ;})
             .finally(() => {setRender(true)})
 
-return null
-},[category])
+    return null
+    },[category])
 
    
 return (
