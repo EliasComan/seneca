@@ -7,7 +7,6 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
    
     const onAdd =  ( cant) =>{
        setCant(cant)
-       console.log(cant)
    }
     console.log(cant)
     return(
