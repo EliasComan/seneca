@@ -33,7 +33,7 @@ const NavBar = () =>{
               </li>
             </ul>
             <span className="cart-span">
-             <CartWidget/>
+            <Link to='/cart'> <CartWidget/></Link>
             </span>
           </div>
         </div>
