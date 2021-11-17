@@ -11,7 +11,6 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
     console.log(cant)
     return(
 
-    <>
     <div className='item'>
             <div className="card mb-3" >
                 <div className="row no-gutters">
@@ -29,7 +28,6 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
                 </div>
             </div>
         </div>
-    </>
 
 
 )}
