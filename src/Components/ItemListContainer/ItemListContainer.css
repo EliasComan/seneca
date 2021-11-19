@@ -4,3 +4,7 @@
     align-items: center;
     height: 20vh;
 }
+
+.row{
+    margin:15% 0.5% 15% 0.5% !important ;
+}
