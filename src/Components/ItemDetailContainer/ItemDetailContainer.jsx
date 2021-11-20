@@ -31,7 +31,11 @@ useEffect(() => {
     return(
         <>
           {!render ? 
-            <h1>Cargando...</h1>
+          < div style={{height:'50vh', display:'flex', alignItems:'center',justifyContent:'center',width:'100%'}}>
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
             :
               <ItemDetail
                 nombre={item.nombre}
