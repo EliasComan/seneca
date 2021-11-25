@@ -17,3 +17,6 @@
     text-decoration: none;
     color:black;
 }
+.col{
+    overflow: hidden;
+}

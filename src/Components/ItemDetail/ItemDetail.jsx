@@ -3,14 +3,14 @@ import { useState } from 'react';
 import Contador from '../contador/Contador'
 import {CartContext} from '../CartContext/CartContextProvider';
 
-const ItemDetail = ({ imagen , nombre , precio, cantidad,  }) => {
+const ItemDetail = ({ imagen , nombre , precio, cantidad, id  }) => {
     const [cant, setCant] = useState(0)
     const { addCart } = useContext(CartContext);
     
     
     const onAdd =  ( cant ) =>{
        setCant(cant)
-       addCart({imagen: imagen, nombre:nombre, precio: precio , cantidad: cant})
+       addCart({imagen: imagen, id:id, nombre:nombre, precio: precio , cantidad: cant})
    }
     return(
 
@@ -25,7 +25,7 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad,  }) => {
                         <h5 className="card-title">{nombre}</h5>
                         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p className="card-text"><small className="text-muted">{precio}</small></p>
-                        <Contador cantidad = {cantidad} onAdd={onAdd} inicial={1}/>
+                        <Contador cantidad = {cantidad} onAdd={ onAdd } inicial={1}/>
                         
                     </div>
                     </div>

@@ -38,11 +38,11 @@ return (
                         imagen ={item.imagen}
                     />)})
                 :
-                < div style={{height:'50vh', display:'flex', alignItems:'center',justifyContent:'center',width:'100%'}}>
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                <div style={{height:'50vh', display:'flex', alignItems:'center',justifyContent:'center',width:'100%'}}>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
                     </div>
-                </div>
+                 </div>
                 
         }</>
         )

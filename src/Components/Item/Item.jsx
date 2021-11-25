@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Item/Item.css'
 
-const Item = ({nombre , imagen, id,categoria}) => {
+const Item = ({nombre , imagen, id,categoria }) => {
    
     return(
       

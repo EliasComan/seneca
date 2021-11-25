@@ -9,9 +9,27 @@ const CartContextProvider =  ({children}) => {
 const [cart, setCart] = useState([])
 const [cantCart, setCartCant] = useState(0)
 
+const isinCart  = ( item ) => {
+   const condition =  cart.some( i =>  i.id === item.id)
+    return condition;
+}
+
 
 const addCart =( item ) =>{
-setCart([...cart, item])
+const iscart = isinCart(item) 
+    if (iscart === true ){
+
+        cart.map(itemcart => {return(
+             itemcart.id === item.id ? itemcart.cantidad = item.cantidad : itemcart
+        )})}
+    else{
+            setCart([...cart, item]) }
+        
+        }
+
+const deteleItem = (id) =>{
+
+setCart( cart.filter(i => {return i.id !== id}));
 }
 
 
@@ -30,11 +48,13 @@ useEffect(()=> {
         
         setCartCant(element);
     }
+    cart === 0 ? setCartCant(0) : setCartCant(element);
 },[cart])
+
 
 return(
 
-            <CartContext.Provider value={ { addCart, clearCart, cantCart, cart }}>
+            <CartContext.Provider value={ { addCart, clearCart, cantCart, cart, deteleItem }}>
                 {children}
             </CartContext.Provider>
 )}

@@ -22,6 +22,7 @@
     margin-left: 0% !important;
     padding-left:  0% !important;
 }
-.cantidad h3{
+ h3{
     overflow: hidden !important;
+    font-size: small;
 }
