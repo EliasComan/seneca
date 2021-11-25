@@ -1,11 +1,14 @@
-import React from 'react';
+import React,{ useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
+import { CartContext } from '../CartContext/CartContextProvider';
 import './navBar.css'
 
 
 const NavBar = () =>{
-    return (
+  const   { cantCart } = useContext(CartContext);
+  
+  return (
         <>
         <header className="App-header">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,6 +38,11 @@ const NavBar = () =>{
             <span className="cart-span">
             <Link to='/cart'> <CartWidget/> </Link>
             </span>
+            { cantCart > 0 ?
+            <h3 className='cantidad'>{cantCart}</h3>
+          : <></>}
+            <div >
+            </div>
           </div>
         </div>
       </nav>

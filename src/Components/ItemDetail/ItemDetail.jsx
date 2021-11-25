@@ -1,14 +1,17 @@
-import React, {  } from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import Contador from '../contador/Contador'
+import {CartContext} from '../CartContext/CartContextProvider';
 
-const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
+const ItemDetail = ({ imagen , nombre , precio, cantidad,  }) => {
     const [cant, setCant] = useState(0)
-   
-    const onAdd =  ( cant) =>{
+    const { addCart } = useContext(CartContext);
+    
+    
+    const onAdd =  ( cant ) =>{
        setCant(cant)
+       addCart({imagen: imagen, nombre:nombre, precio: precio , cantidad: cant})
    }
-    console.log(cant)
     return(
 
     <div className='item'>
@@ -23,6 +26,7 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad }) => {
                         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p className="card-text"><small className="text-muted">{precio}</small></p>
                         <Contador cantidad = {cantidad} onAdd={onAdd} inicial={1}/>
+                        
                     </div>
                     </div>
                 </div>

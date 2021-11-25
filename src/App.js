@@ -6,28 +6,31 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './Components/Footer/Footer'
 import Cart from './Components/cart/Cart'
 import '../src/App.css'
+import CartContextProvider from './Components/CartContext/CartContextProvider';
 
 function App() {
  
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Switch>
-        <Route exact path='/cart'>
-          <Cart/>
-        </Route>
-        <Route exact path='/'>
-          <ItemListContainer greeting='Bienvenidos'/>
-        </Route>
-        <Route exact path='/:category'>
-          <ItemListContainer greeting='Bienvenidos'/>
-        </Route>
-        <Route exact path='/:category/:id'>
-          <ItemDetailContainer/>
-        </Route>
-      </Switch>
-      <Footer/>
-    </BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
+        <NavBar/>
+        <Switch>
+          <Route exact path='/cart'>
+            <Cart/>
+          </Route>
+          <Route exact path='/'>
+            <ItemListContainer />
+          </Route>
+          <Route exact path='/:category'>
+            <ItemListContainer />
+          </Route>
+          <Route exact path='/:category/:id'>
+            <ItemDetailContainer/>
+          </Route>
+        </Switch>
+        <Footer/>
+      </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

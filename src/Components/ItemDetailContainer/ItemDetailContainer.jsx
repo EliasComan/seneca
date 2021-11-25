@@ -43,6 +43,7 @@ useEffect(() => {
                 precio={item.precio}
                 cantidad={item.stock}
                 imagen={item.imagen}
+                id= {item.id}
               />
           }
         </>
