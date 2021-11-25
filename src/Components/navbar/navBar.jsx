@@ -6,7 +6,7 @@ import './navBar.css'
 
 
 const NavBar = () =>{
-  const   { cantCart } = useContext(CartContext);
+  const   { cantItem } = useContext(CartContext);
   
   return (
         <>
@@ -38,9 +38,8 @@ const NavBar = () =>{
             <span className="cart-span">
             <Link to='/cart'> <CartWidget/> </Link>
             </span>
-            { cantCart > 0 ?
-            <h3 className='cantidad'>{cantCart}</h3>
-          : <></>}
+           { cantItem() > 0 && <h3 className='cantidad'> {cantItem()}</h3>}
+          
             <div >
             </div>
           </div>
