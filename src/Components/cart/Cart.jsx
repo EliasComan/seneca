@@ -9,7 +9,7 @@ const Cart = () => {
     
     return(
         <>
-            <button className="btn btn-dark" onClick={clearCart}> clearCart</button>
+            { cart.length > 0 &&<button className="btn btn-dark" onClick={clearCart}> clearCart</button>}
             {precioCart() > 0 && <h1>Precio total: {precioCart () }</h1> }
             
             <div className="row row-cols-1 row-cols-md-3 g-4">  
