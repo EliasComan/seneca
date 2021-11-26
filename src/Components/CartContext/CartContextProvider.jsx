@@ -16,8 +16,8 @@ const isinCart  = ( item ) => {
 
 
 const addCart =( item ) =>{
-const iscart = isinCart(item) 
-    if (iscart === true ){
+
+    if (isinCart(item) === true ){
 
        cart.map(itemcart => {return(
              itemcart.id === item.id ? itemcart.cantidad = item.cantidad : itemcart
