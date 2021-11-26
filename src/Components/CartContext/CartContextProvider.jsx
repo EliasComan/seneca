@@ -40,7 +40,7 @@ const clearCart = () => {
 
 
 const cantItem = () =>{
-  return  cart.reduce((acum, item)=>  acum = acum + item.cantidad ,0)
+  return  cart.reduce((acum, item)=>  acum = acum + item.cantidad,0)
 }
 
 const precioCart = () =>{
