@@ -14,7 +14,7 @@ const Cart = () => {
             
             <div className="row row-cols-1 row-cols-md-3 g-4">  
             
-                { cart.length >= 0 ?
+                { cart.length > 0 ?
             cart.map((i) =>  {
                 return (
                     <>
