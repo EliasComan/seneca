@@ -26,7 +26,6 @@ const Contador = ( { cantidad,  inicial, onAdd, id } ) =>{
                 </>
                 :
                 <>
-                  <button className='btn btn-dark' onClick={() =>{ setRender(true)}}>Volver</button>
                   <Link to='/cart'> <button id='boton' className='btn btn-dark'> Terminar compra  </button> </Link>
                 </> 
             }</div>
