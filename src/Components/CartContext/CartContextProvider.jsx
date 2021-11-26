@@ -25,7 +25,6 @@ const addCart =( item ) =>{
     }
     else{
             setCart([...cart, item]) }
-        
         }
 
 const deteleItem = (id) =>{
