@@ -19,12 +19,11 @@ const addCart =( item ) =>{
 
     if (isinCart(item) === true ){
 
-     const newCart =  cart.filter(itemcart => {console.log(itemcart);return(
+     const newCart =  cart.filter(itemcart => {return(
          
              itemcart.id === item.id ? itemcart.cantidad += item.cantidad : itemcart
         )})
         setCart(newCart)
-        console.log(newCart)
     }
     else{
             setCart([...cart, item]) }
