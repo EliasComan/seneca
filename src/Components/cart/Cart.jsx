@@ -4,7 +4,7 @@ import {Link }from 'react-router-dom'
 import './cart.css'
 
 const Cart = () => {
-    const {  clearCart, cart, deteleItem, precioCart } = useContext(CartContext);
+    const {  clearCart, cart, deteleItem, precioCart, cantItem } = useContext(CartContext);
     
     
     return(
@@ -27,7 +27,7 @@ const Cart = () => {
                             <div class="col-md-8 ">
                             <div className="card-body ">
                                 <h5 className="card-title">{i.nombre}</h5>
-                                <p className="card-text"> precio : ${i.precio}</p>
+                                <p className="card-text"> precio : ${i.precio * cantItem()}</p>
                                 <p className="card-text"><small className="text-muted">Cantidad : {i.cantidad}</small></p>
                                 <button  onClick={() => deteleItem(i.id)} className="btn btn-light">eliminar</button>
                             </div>

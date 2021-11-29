@@ -30,8 +30,7 @@ const addCart =( item ) =>{
         }
 
 const deteleItem = (id) =>{
-
-setCart( cart.filter(i => {return i.id !== id}));
+    setCart( cart.filter(i => {return i.id !== id}));
 }
 
 
@@ -45,7 +44,7 @@ const cantItem = () =>{
 }
 
 const precioCart = () =>{
-    return cart.reduce((acum, item) => acum = acum +item.precio, 0 )
+    return cart.reduce((acum, item) => acum = acum += (item.precio * item.cantidad), 0 )
 }
 
 return(
