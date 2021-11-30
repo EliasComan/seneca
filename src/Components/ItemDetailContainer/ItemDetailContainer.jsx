@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import data from '../data/data'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { getFirestore } from '../services/getFirestore';
 
 
 
 const ItemDetailContainer = () => {
   
   const [render, setRender] = useState(false)
-  const [item, setItems] = useState();
+  const [item, setItems] = useState([]);
   const { id } = useParams();
 
 useEffect(() => {
-    const getItems =  new Promise((res,rej) => {
-        setTimeout(() => {
-            res(data)
-            rej(errr => {console.log(errr)})}, 2000);
-        
-    })
+  
 
-    getItems.then(item => {
-        const itemfind = item.find(i => i.id === parseInt(id) )
-        setItems(itemfind)
-        setRender(true)
-})
- 
+      const getFb = getFirestore();
+      getFb.collection('items').doc(id).get()
+      .then(item => setItems({id:item.id, ...item.data()}) )
+      .finally(setRender(true))
+
+
   return(null)
     },[id])
     

@@ -1,12 +1,11 @@
-import React, { useContext} from 'react';
+import React, { useContext , memo} from 'react';
 import { CartContext } from '../CartContext/CartContextProvider';
 import {Link }from 'react-router-dom'
 import './cart.css'
 
-const Cart = () => {
+const Cart = memo (()  => {
+
     const {  clearCart, cart, deteleItem, precioCart, cantItem } = useContext(CartContext);
-    
-    
     return(
         <>
             { cart.length > 0 &&<button className="btn btn-dark" onClick={clearCart}> clearCart</button>}
@@ -45,6 +44,7 @@ const Cart = () => {
 
                 </div>
         </>
-)}
+        )
+})
 
 export default Cart

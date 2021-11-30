@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import data from '../data/data'
+import { getFirestore } from '../services/getFirestore';
 import Item from '../Item/Item';
 
 
 const ItemList = (  ) => {
     const [render, setRender] = useState(false)
-    const [item, setItems] = useState();
+    const [item, setItems] = useState([]);
     const { category } = useParams();
     useEffect( () => {
-        const getItems =  new Promise((res,rej) => {
-            setTimeout(() => {
-                res(data)
-                rej(err => {console.log(err)})
-            }, 2000);
 
-                })
-        getItems.then(item => {
-            const getItems = item.filter( item => item.category === category)
-            getItems.length  === 0 ? setItems(item)  : setItems(getItems)
-                    ;})
-            .finally(() => {setRender(true)})
+        const getFb = getFirestore();
 
-    return null
+       const fbQuery =  category ? getFb.collection('items').where('categoria', '==' , category ).get() : getFb.collection('items').get() 
+        
+        
+
+        fbQuery.then(res => {
+            setItems(res.docs.map(i =>({id:i.id, ...i.data()})))
+            })
+        .catch(err => {console.log(err)})
+        .finally(setRender(true))
+
     },[category])
 
    
@@ -32,7 +31,7 @@ return (
                 item.map(item  => {return(
                     <Item 
                         key={item.id} 
-                        categoria={item.category} 
+                        categoria={item.categoria} 
                         id= {item.id} 
                         nombre={item.nombre}
                         imagen ={item.imagen}
