@@ -9,7 +9,7 @@ const Cart = memo (()  => {
     return(
         <>
             { cart.length > 0 &&<button className="btn btn-dark" onClick={clearCart}> clearCart</button>}
-            {precioCart() > 0 && <h1>Precio total: {precioCart () }</h1> }
+            {Math.round(100 * precioCart ()) / 100 > 0 && <h1>Precio total: {Math.round(100 * precioCart ()) / 100 } ETH </h1> }
             
             <div className="row row-cols-1 row-cols-md-3 g-4">  
             
@@ -26,7 +26,7 @@ const Cart = memo (()  => {
                             <div class="col-md-8 ">
                             <div className="card-body ">
                                 <h5 className="card-title">{i.nombre}</h5>
-                                <p className="card-text"> precio : ${i.precio * cantItem()}</p>
+                                <p className="card-text"> precio : {Math.round(100 * (i.precio * cantItem()))/100} ETH</p>
                                 <p className="card-text"><small className="text-muted">Cantidad : {i.cantidad}</small></p>
                                 <button  onClick={() => deteleItem(i.id)} className="btn btn-light">eliminar</button>
                             </div>

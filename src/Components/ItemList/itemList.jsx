@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getFirestore } from '../services/getFirestore';
+import { getFirestore } from '../../services/getFirestore';
 import Item from '../Item/Item';
 
 
@@ -17,7 +17,7 @@ const ItemList = (  ) => {
         
 
         fbQuery.then(res => {
-            setItems(res.docs.map(i =>({id:i.id, ...i.data()})))
+            setItems(res.docs.map(i =>( { id:i.id, ...i.data() } ) ) )
             })
         .catch(err => {console.log(err)})
         .finally(setRender(true))

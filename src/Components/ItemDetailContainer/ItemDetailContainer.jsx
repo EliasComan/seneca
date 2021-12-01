@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { getFirestore } from '../services/getFirestore';
+import { getFirestore } from '../../services/getFirestore';
 
 
 
 const ItemDetailContainer = () => {
   
   const [render, setRender] = useState(false)
-  const [item, setItems] = useState([]);
+  const [item, setItems] = useState({});
   const { id } = useParams();
 
 useEffect(() => {

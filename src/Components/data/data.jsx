@@ -132,7 +132,7 @@ const data = [{
 {
     nombre: 'Bored Ape Yacht Club #1',
     id:21,
-    category:'boredape',
+    c:'boredape',
     imagen: 'https://lh3.googleusercontent.com/9WkSu8CP7gZjaEmUy8cpaKG3mK6ScHeEDvQf8driDoRxuxy4GPAs_W_Dn_DQascQSGDkdUL4cjmsnRrL6xN-NDp-s_RNwN5pxiCo',
     stock:12,
     precio:6

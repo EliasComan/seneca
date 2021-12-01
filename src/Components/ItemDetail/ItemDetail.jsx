@@ -24,7 +24,7 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad, id  }) => {
                     <div className="card-body">
                         <h5 className="card-title">{nombre}</h5>
                         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-muted">{precio}</small></p>
+                        <p className="card-text"><small className="text-muted">Precio:  {precio} ETH</small></p>
                        <Contador cant={cant} cantidad = {cantidad} onAdd={ onAdd } inicial={1}/>
                     </div>
                     </div>
