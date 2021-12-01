@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { getFirestore } from '../../services/getFirestore';
+import { getFirestore } from '../services/getFire';
 
 
 

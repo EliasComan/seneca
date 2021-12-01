@@ -35,9 +35,10 @@ const Cart = memo (()  => {
                     </div>
                 </>
                 )})
+                
                 :
                 <div className='empty-cart'>
-                    
+
                     <h1>Aun no hay nada aqui</h1>
                     <Link to='/'> <button className='btn btn-dark'> Seguir comprando </button> </Link>
                 </div>

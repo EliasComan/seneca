@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getFirestore } from '../../services/getFirestore';
+import { getFirestore } from '../services/getFire';
 import Item from '../Item/Item';
 
 
