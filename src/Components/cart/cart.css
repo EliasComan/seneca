@@ -29,3 +29,14 @@
 .card{
     margin:2% !important
 }
+
+.cart-top{
+    margin: 5% 1% 2% 1%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart-top h1{
+    overflow: hidden;
+}
