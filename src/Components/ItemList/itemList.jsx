@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getFirestore } from '../services/getFire';
+import { getFirestore } from '../../services/getFire';
 import Item from '../Item/Item';
 
 
@@ -8,20 +8,16 @@ const ItemList = (  ) => {
     const [render, setRender] = useState(false)
     const [item, setItems] = useState([]);
     const { category } = useParams();
+    
     useEffect( () => {
-
-        const getFb = getFirestore();
-
-       const fbQuery =  category ? getFb.collection('items').where('categoria', '==' , category ).get() : getFb.collection('items').get() 
+      const getFb = getFirestore();
+      const fbQuery =  category ? getFb.collection('items').where('categoria', '==' , category ).get() : getFb.collection('items').get() 
         
-        
-
-        fbQuery.then(res => {
-            setItems(res.docs.map(i =>( { id:i.id, ...i.data() } ) ) )
+      fbQuery.then(res => {
+          setItems(res.docs.map(i =>( { id:i.id, ...i.data() })) )
             })
-        .catch(err => {console.log(err)})
-        .finally(setRender(true))
-
+      .catch(err => {console.log(err)})
+      .finally(setRender(true))
     },[category])
 
    

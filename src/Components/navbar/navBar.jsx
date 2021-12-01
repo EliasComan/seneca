@@ -1,7 +1,7 @@
 import React,{ useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
-import { CartContext } from '../CartContext/CartContextProvider';
+import {CartContext} from '../../CartContext/CartContextProvider';
 import './navBar.css'
 
 

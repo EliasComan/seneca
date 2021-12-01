@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import Contador from '../contador/Contador'
-import {CartContext} from '../CartContext/CartContextProvider';
+import {CartContext} from '../../CartContext/CartContextProvider';
 
 const ItemDetail = ({ imagen , nombre , precio, cantidad, id  }) => {
     const [cant, setCant] = useState(0)
