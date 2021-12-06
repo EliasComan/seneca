@@ -7,7 +7,7 @@ import { useParams } from 'react-router';
 
 const ItemListContainer = () =>{
     const [render, setRender] = useState(false)
-    const [item, setItems] = useState([]);
+    const [items, setItems] = useState([]);
     const { category } = useParams();
     
     useEffect( () => {
@@ -26,7 +26,7 @@ const ItemListContainer = () =>{
     return( 
                
                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <ItemList item={item} render={render}/>
+                    <ItemList items={items} render={render}/>
                 </div>
          )}
 
