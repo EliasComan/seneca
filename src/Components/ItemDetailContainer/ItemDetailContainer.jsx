@@ -12,15 +12,10 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
 useEffect(() => {
-  
-
       const getFb = getFirestore();
       getFb.collection('items').doc(id).get()
       .then(item => setItems({id:item.id, ...item.data()}) )
       .finally(setRender(true))
-
-
-  return(null)
     },[id])
     
     return(
