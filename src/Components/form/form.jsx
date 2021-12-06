@@ -16,11 +16,11 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                             <form>
                                 <div className="mb-3">
                                     <label  className="form-label">Nombre.</label>
-                                    <input type="email" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" id="nombre" aria-describedby="emailHelp"/>
+                                    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" id="nombre" aria-describedby="emailHelp"/>
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Email.</label>
-                                    <input type="text"  value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email"/>
+                                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email"/>
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>
