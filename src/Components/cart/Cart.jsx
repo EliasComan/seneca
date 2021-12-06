@@ -21,8 +21,8 @@ const Cart = memo (()  => {
         e.preventDefault();
         
         const compra = cart.map(i => {
-            const cantidad = i.cantidad
             const precio = Math.round(100 * (i.precio * i.cantidad))/100;
+            const cantidad = i.cantidad
             const nombre = i.nombre;
             return{cantidad, precio, nombre}
 
@@ -39,7 +39,7 @@ const Cart = memo (()  => {
     }
     
   
-            return(
+    return(
         <>
             { cart.length > 0 &&
             <div className="cart-top">
@@ -49,14 +49,18 @@ const Cart = memo (()  => {
             </div>
             }
                     
-            <Form generarOrden={generarOrden} setEmail={setEmail}  setTelefono={setTelefono}  setName={setName}  buyid = {buyid}/>
+            <Form
+            generarOrden={generarOrden} 
+            setEmail={setEmail} 
+            setTelefono={setTelefono}  
+            setName={setName} 
+            buyid = {buyid}
+            />
             
             <div className="row row-cols-1 row-cols-md-3 g-4">  
                 { cart.length > 0 ?
                     cart.map((i) =>  {
                         return (
-                            <>
-                        
                             <div key={i.id} className="card mb-3 text-white bg-dark" style={{maxWidth: '18rem'}} >
                                 <div className="row g-0">
                                     <div className="col-md-4 ">
@@ -72,12 +76,10 @@ const Cart = memo (()  => {
                                     </div>
                                 </div>
                             </div>
-                        </>
                         )})
                     
                     :
                     <div className='empty-cart'>
-
                         <h1>Aun no hay nada aqui</h1>
                         <Link to='/'> <button className='btn btn-dark'> Seguir comprando </button> </Link>
                     </div>
