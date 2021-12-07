@@ -13,10 +13,7 @@ const {setPassword, setemailSession, accesUsser,userOnline, error,password, emai
 
         <>{userOnline?
             <ItemListContainer/>
-        
-            
             :
-
             <form style={{display:'flex',flexDirection:'column', alignItems:'center', justifyContent:'center', margin:'5%'}}>
                 {error  && <h3 style={{color:'red'}} > { error.message} </h3> }
             <div className="mb-3" >
