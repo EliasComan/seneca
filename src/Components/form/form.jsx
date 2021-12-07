@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext} from 'react';
+import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 
 const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email, telefono}) => {
+   const { user} = useContext(SessionContext)
+   
+   
     return(
 
         <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -20,7 +25,10 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Email.</label>
-                                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email"/>
+                                   { user?
+                                   <h6>{user}</h6>
+                                   :
+                                   <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email"/>}
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>

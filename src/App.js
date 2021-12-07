@@ -7,31 +7,43 @@ import Footer from './Components/Footer/Footer'
 import Cart from './Components/cart/Cart'
 import '../src/App.css'
 import CartContextProvider from './CartContext/CartContextProvider';
-
+import SessionContextProvider from './SessionContext/SessionContextProvider';
+import UserOnline from './Components/onlineuser/useronline';
+import Register from './Components/session/Register';
+import Access from './Components/session/Acces';
 
 function App() {
  
-  return (
-    <CartContextProvider>
-      <BrowserRouter>
-        <NavBar/>
-        <Switch>
-          <Route exact path='/cart'>
-            <Cart/>
-          </Route>
-          <Route exact path='/'>
-            <ItemListContainer />
-          </Route>
-          <Route exact path='/:category'>
-            <ItemListContainer />
-          </Route>
-          <Route exact path='/:category/:id'>
-            <ItemDetailContainer/>
-          </Route>
-        </Switch>
-        <Footer/>
-      </BrowserRouter>
-    </CartContextProvider>
+  return(
+    <SessionContextProvider>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <UserOnline/>
+          <Switch>
+            <Route exact path='/register'>
+              <Register/>
+            </Route>
+            <Route exact path='/access'>
+              <Access/>
+            </Route>
+            <Route exact path='/cart'>
+              <Cart/>
+            </Route>
+            <Route exact path='/'>
+              <ItemListContainer />
+            </Route>
+            <Route exact path='/:category'>
+              <ItemListContainer />
+            </Route>
+            <Route exact path='/:category/:id'>
+              <ItemDetailContainer/>
+            </Route>
+          </Switch>
+          <Footer/>
+        </BrowserRouter>
+      </CartContextProvider>
+    </SessionContextProvider>
   );
 }
 
