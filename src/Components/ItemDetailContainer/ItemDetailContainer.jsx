@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   const [item, setItems] = useState({});
   const { id } = useParams();
 
-useEffect(() => {
+  useEffect(() => {
       const getFb = getFirestore();
       getFb.collection('items').doc(id).get()
       .then(item => setItems({id:item.id, ...item.data()}) )
@@ -23,7 +23,7 @@ useEffect(() => {
           {!render ? 
           < div style={{height:'50vh', display:'flex', alignItems:'center',justifyContent:'center',width:'100%'}}>
             <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
+              <span className="visually-hidden">No estamos encontrando lo solicitado..</span>
             </div>
           </div>
             :

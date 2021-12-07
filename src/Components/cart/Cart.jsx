@@ -13,9 +13,6 @@ const Cart = memo (()  => {
     const [email, setEmail] = useState('')
     const [buyid, setbuyId] = useState(null)
     const [telefono, setTelefono] = useState(0)
-
- 
-    
     
     const generarOrden = (e) => {
         e.preventDefault();
@@ -25,17 +22,15 @@ const Cart = memo (()  => {
             const cantidad = i.cantidad
             const nombre = i.nombre;
             return{cantidad, precio, nombre}
-
         })
-
         const comprador = {name, email, telefono}
+        setBuyer({comprador,compra}) 
+        const getFb = getFirestore();
+        const ordenes = getFb.collection('ordenes').add(buyer)
+            ordenes.then(res => setbuyId(res.id))
+            ordenes.catch(err => console.log(err))
 
-      setBuyer({comprador,compra})  
-
-      const getFb = getFirestore();
-      const ordenes = getFb.collection('ordenes').add(buyer)
-             ordenes .then(res => setbuyId(res.id))
-              ordenes.catch(err => console.log(err))
+            clearCart();  
     }
     
   
@@ -85,7 +80,7 @@ const Cart = memo (()  => {
                     </div>
                 }
 
-                </div>
+            </div>
         </>
         )
 })
