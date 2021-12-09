@@ -5,7 +5,8 @@ import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email, telefono}) => {
-   const { user} = useContext(SessionContext)
+   const { user } = useContext(SessionContext)
+ 
    
    
     return(
@@ -14,27 +15,27 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 className="modal-title" id="exampleModalLabel">Finalizar compra</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
                                     <label  className="form-label">Nombre.</label>
-                                    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" id="nombre" aria-describedby="emailHelp"/>
+                                    <input type="text" value={name} onChange={(e)=> setName(e.target.value)} className="form-control" id="nombre" aria-describedby="emailHelp" required/>
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Email.</label>
                                    { user?
                                    <h6>{user}</h6>
                                    :
-                                   <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email"/>}
+                                   <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>
-                                    <input type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono"/>
+                                    <input type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono" required/>
                                 </div>
-                                <button onClick={   generarOrden }  className="btn btn-dark">comprar</button>
+                                <button onClick={ (e) =>  generarOrden(e) }  className="btn btn-dark">comprar</button>
                             </form>
                         </div>
                         <div className="modal-footer">

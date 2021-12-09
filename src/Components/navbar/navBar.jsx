@@ -36,10 +36,8 @@ const NavBar = () =>{
               </li>
             </ul>
             <Link to='/cart'> 
-              <button type="button" class="btn btn-ligth">
                 <CartWidget/> 
-             { cantItem() > 0 ?   <span class="badge bg-danger">    {cantItem()} </span> : <></>}
-              </button>
+             { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
             </Link> 
           
             <div >

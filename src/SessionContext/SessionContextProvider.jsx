@@ -21,27 +21,28 @@ const SessionContextProvider = ({children}) =>{
         }
     })
 
-        const createUsser = (e) => {
+    const createUsser = (e) => {
             e.preventDefault()
             firebase.auth().createUserWithEmailAndPassword(emailSession,password)
-                .then(res => {setSessionCreate(res.user.email); setError('')})
-                .catch(err =>{setError(err); setSessionCreate('')})
+                .then(res => {
+                    setSessionCreate(res.user.email)})
+                .catch(err =>{
+                    setError(err); 
+                    setSessionCreate('')})
         }
 
-        const accesUsser = (e) =>{
-            e.preventDefault()
+    const accesUsser = (e) =>{
+        e.preventDefault()
             firebase.auth().signInWithEmailAndPassword(emailSession,password)
-                    .then(user => console.log(user))
+                    .then(user => setUser(user.user.email))
                     .catch(err => {setError(err)})
-        }
-        
-        const logOut = () =>{
+                }
+                const logOut = () =>{
             firebase.auth().signOut()
                 .then(() => {
-                   setUser('')
-              }).catch((error) => {
-                    alert(error);
-              });
+                   setUser('') })
+                .catch((error) => {
+                    alert(error);});
         }
 
     

@@ -1,36 +1,37 @@
-import React, { useContext , memo, useState} from 'react';
+import React, { useContext , useState} from 'react';
 import {CartContext} from '../../CartContext/CartContextProvider';
 import {Link }from 'react-router-dom'
 import './cart.css'
 import { getFirestore } from '../../services/getFire';
 import Form from '../form/form';
+import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
-const Cart = memo (()  => {
 
+const Cart = ()  => {
+    const { user } = useContext(SessionContext)
     const {  clearCart, cart, deteleItem, precioCart } = useContext(CartContext);
-    const [ buyer, setBuyer] = useState({})
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [buyid, setbuyId] = useState(null)
     const [telefono, setTelefono] = useState(0)
-    
+    const orden = {}
+  
     const generarOrden = (e) => {
-        e.preventDefault();
-        
-        const compra = cart.map(i => {
+        e.preventDefault()
+        orden.compra = cart.map(i => {
             const precio = Math.round(100 * (i.precio * i.cantidad))/100;
             const cantidad = i.cantidad
             const nombre = i.nombre;
             return{cantidad, precio, nombre}
         })
-        const comprador = {name, email, telefono}
-        setBuyer({comprador,compra}) 
+        user ? orden.comprador = {name, user, telefono} : orden.comprador={name, email, telefono}
+        orden.precioTotal = Math.round(100 * precioCart ()) / 100 
         const getFb = getFirestore();
-        const ordenes = getFb.collection('ordenes').add(buyer)
-            ordenes.then(res => setbuyId(res.id))
-            ordenes.catch(err => console.log(err))
-
-            clearCart();  
+        getFb.collection('ordenes').add(orden)
+            .then(res =>setbuyId(res.id))
+            .catch(err => console.log(err))
+            .finally(()=> clearCart())
+            console.log(orden)
     }
     
   
@@ -45,7 +46,7 @@ const Cart = memo (()  => {
             }
                     
             <Form
-            generarOrden={generarOrden} 
+            generarOrden={generarOrden}
             setEmail={setEmail} 
             setTelefono={setTelefono}  
             setName={setName} 
@@ -83,6 +84,6 @@ const Cart = memo (()  => {
             </div>
         </>
         )
-})
+}
 
 export default Cart
