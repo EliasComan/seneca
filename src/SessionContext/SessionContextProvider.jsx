@@ -1,6 +1,8 @@
 import React,{createContext, useState} from 'react';
 import 'firebase/auth';
 import firebase from 'firebase';
+import { getFirestore } from '../services/getFire';
+
 
 export const SessionContext = createContext ('');
 
@@ -20,16 +22,45 @@ const SessionContextProvider = ({children}) =>{
             setuserOnline(false)
         }
     })
+    
+    const wishList = (user) =>{
+        getFirestore().collection('wishlist').doc(user).set({items:{}})
+        
+    }
+    
+    const addWishList = (item, user) =>{
+       const update = getFirestore().collection('wishlist').doc(user)
+        update.update({
+            items: firebase.firestore.FieldValue.arrayUnion(item)
+        })
+        
+    }
+    
+    const deleteFromWishList = (item, user) =>{
+        const deleteItem = getFirestore().collection('wishlist').doc(user)
+        deleteItem.update({
+            items: firebase.firestore.FieldValue.arrayRemove(item)
+        })
+    }
+
+    const getWishList =(user) => {
+            getFirestore().collection('wishlist').doc(user).get();
+    }
 
     const createUsser = (e) => {
             e.preventDefault()
             firebase.auth().createUserWithEmailAndPassword(emailSession,password)
                 .then(res => {
-                    setSessionCreate(res.user.email)})
+                    setSessionCreate(res.user.email);
+                    wishList(res.user.email);
+                    
+                })
                 .catch(err =>{
                     setError(err); 
                     setSessionCreate('')})
-        }
+               
+                }
+        
 
     const accesUsser = (e) =>{
         e.preventDefault()
@@ -37,14 +68,14 @@ const SessionContextProvider = ({children}) =>{
                     .then(user => setUser(user.user.email))
                     .catch(err => {setError(err)})
                 }
-                const logOut = () =>{
+    const logOut = () =>{
             firebase.auth().signOut()
                 .then(() => {
                    setUser('') })
                 .catch((error) => {
                     alert(error);});
         }
-
+    
     
     return(
 
@@ -57,6 +88,10 @@ const SessionContextProvider = ({children}) =>{
                 sessionCreate,
                 accesUsser,
                 logOut,
+                wishList,
+                addWishList,
+                getWishList,
+                deleteFromWishList
                 }}>
                 {children}
             </SessionContext.Provider>

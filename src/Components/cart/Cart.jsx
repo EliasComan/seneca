@@ -31,7 +31,8 @@ const Cart = ()  => {
             .then(res =>setbuyId(res.id))
             .catch(err => console.log(err))
             .finally(()=> clearCart())
-            console.log(orden)
+
+        
     }
     
   

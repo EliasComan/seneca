@@ -5,12 +5,13 @@ import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 const WishList = () =>{
     
-    const {} = useContext(SessionContext)
+    const { WishList } = useContext(SessionContext)
     
     return(
 
-        <>
-        </>
+        <button className='btn btn-dark'>
+            AGREGAR A LA WISHLIST
+        </button>
 
 
 
