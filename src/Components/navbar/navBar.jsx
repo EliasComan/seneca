@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget'
 import {CartContext} from '../../CartContext/CartContextProvider';
 import './navBar.css'
+import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 const NavBar = () =>{
+  const { userOnline, logOut } = useContext(SessionContext)
   const   { cantItem } = useContext(CartContext);
   
   return (
@@ -35,13 +37,17 @@ const NavBar = () =>{
                 <Link to='/lostpoets' className="nav-link" >Lost-Poets</Link>
               </li>
             </ul>
-            <Link to='/cart'> 
-                <CartWidget/> 
-             { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
-            </Link> 
-          
-            <div >
-            </div>
+            <ul className="navbar-nav ">
+              <li className='nav-item'>         
+                <Link to='/cart'> 
+                    <CartWidget/> 
+                { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
+                </Link> 
+              </li>
+              <li className='nav-item'>
+                {userOnline && <span className="badge bg-secondary" onClick={logOut}>Cerrar sesion</span>}
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

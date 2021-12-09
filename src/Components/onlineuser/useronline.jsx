@@ -12,9 +12,7 @@ const UserOnline = ()=>  {
 
         <>{userOnline ? 
             <div className='user-online'>
-            <h6>Has inciado sesion como: </h6>
-            <h6>{user}</h6>
-            <button className='btn btn-dark' onClick={logOut}>Cerrar sesion</button>
+            <h6><span className="badge bg-secondary">{user}   </span> </h6>
             </div>
             : 
             <div className='user'>
