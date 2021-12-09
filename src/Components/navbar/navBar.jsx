@@ -37,15 +37,15 @@ const NavBar = () =>{
                 <Link to='/lostpoets' className="nav-link" >Lost-Poets</Link>
               </li>
             </ul>
-            <ul className="navbar-nav ">
+            <ul className="navbar-nav cart ">
               <li className='nav-item'>         
-                <Link to='/cart'> 
+                <Link   to='/cart'> 
                     <CartWidget/> 
                 { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
                 </Link> 
               </li>
               <li className='nav-item'>
-                {userOnline && <span className="badge bg-secondary" onClick={logOut}>Cerrar sesion</span>}
+                {userOnline && <button className="btn btn-secondary btn-sm" onClick={logOut}>Cerrar sesion</button>}
               </li>
             </ul>
           </div>
