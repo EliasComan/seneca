@@ -38,10 +38,13 @@ const NavBar = () =>{
               </li>
             </ul>
             <ul className="navbar-nav cart ">
+             <li className="nav-item">
+             <Link to='/wishlist'><h6><span className="badge bg-secondary">Wishlist </span> </h6></Link>
+             </li>
               <li className='nav-item'>         
                 <Link   to='/cart'> 
-                    <CartWidget/> 
-                { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
+                  <CartWidget/> 
+                  { cantItem() > 0 ?   <span className="badge bg-danger">    {cantItem()} </span> : <></>}
                 </Link> 
               </li>
               <li className='nav-item'>

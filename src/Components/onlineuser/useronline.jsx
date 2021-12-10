@@ -5,15 +5,14 @@ import './useronline.css'
 
 const UserOnline = ()=>  {  
 
-    const { userOnline, user, logOut } = useContext(SessionContext)
+    const { userOnline, logOut } = useContext(SessionContext)
 
 
     return(
 
         <>{userOnline ? 
             <div className='user-online'>
-            <h6><span className="badge bg-secondary">{user}   </span> </h6>
-            <span className="badge bg-secondary" onClick={logOut}>Cerrar sesion</span>
+            
             </div>
             : 
             <div className='user'>

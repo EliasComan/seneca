@@ -23,7 +23,7 @@ function App() {
           <UserOnline/>
           <Switch>
             <Route exact path='/wishlist'>
-              <WishList/>
+            <WishList/>
             </Route>
             <Route exact path='/register'>
               <Register/>
