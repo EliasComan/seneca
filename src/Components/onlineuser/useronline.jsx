@@ -5,7 +5,7 @@ import './useronline.css'
 
 const UserOnline = ()=>  {  
 
-    const { userOnline, logOut } = useContext(SessionContext)
+    const { userOnline } = useContext(SessionContext)
 
 
     return(

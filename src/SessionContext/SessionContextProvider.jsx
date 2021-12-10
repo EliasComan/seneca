@@ -40,7 +40,7 @@ const SessionContextProvider = ({children}) =>{
     const deleteFromWishList = (nombre,imagen, user) =>{
         const deleteItem = getFirestore().collection('wishlist').doc(user)
         deleteItem.update({
-            items:firebase.firestore.FieldValue.arrayUnion({item:{nombre:nombre, imagen:imagen}})
+            items:firebase.firestore.FieldValue.arrayRemove({item:{nombre:nombre, imagen:imagen}})
         })
     }
 
