@@ -11,6 +11,7 @@ import SessionContextProvider from './SessionContext/SessionContextProvider';
 import UserOnline from './Components/onlineuser/useronline';
 import Register from './Components/session/Register';
 import Access from './Components/session/Acces';
+import WishList from './Components/WishList/WishList';
 
 function App() {
  
@@ -21,6 +22,9 @@ function App() {
           <NavBar/>
           <UserOnline/>
           <Switch>
+            <Route exact path='/wishlist'>
+              <WishList/>
+            </Route>
             <Route exact path='/register'>
               <Register/>
             </Route>

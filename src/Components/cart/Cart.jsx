@@ -5,6 +5,7 @@ import './cart.css'
 import { getFirestore } from '../../services/getFire';
 import Form from '../form/form';
 import {SessionContext} from '../../SessionContext/SessionContextProvider';
+import CartCard from '../cartCard/CartCard';
 
 
 const Cart = ()  => {
@@ -58,21 +59,8 @@ const Cart = ()  => {
                 { cart.length > 0 ?
                     cart.map((i) =>  {
                         return (
-                            <div key={i.id} className="card mb-3 text-white bg-dark" style={{maxWidth: '18rem'}} >
-                                <div className="row g-0">
-                                    <div className="col-md-4 ">
-                                    <img src={i.imagen} className="img-fluid rounded-start" alt=""/>
-                                    </div>
-                                    <div className="col-md-8 ">
-                                    <div className="card-body ">
-                                        <h5 className="card-title">{i.nombre}</h5>
-                                        <p className="card-text"> precio : {Math.round(100 * (i.precio * i.cantidad))/100} ETH</p>
-                                        <p className="card-text"><small className="text-muted">Cantidad : {i.cantidad}</small></p>
-                                        <button  onClick={() => deteleItem(i.id)} className="btn btn-light">eliminar</button>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            <CartCard key={i.id}deteleItem={deteleItem} id= {i.id} nombre={i.nombre} precio={i.precio} cantidad={i.cantidad} imagen={i.imagen}/>
                         )})
                     
                     :
