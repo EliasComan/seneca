@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {Link }from 'react-router-dom'
 import './contador.css'
 
-const Contador = ( { cantidad,  inicial, onAdd, id } ) =>{
+const Contador = ( { cantidad,  inicial, onAdd } ) =>{
   
   const [cant, setCant] = useState(inicial)
   const [render, setRender] = useState(true)

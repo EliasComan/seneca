@@ -7,3 +7,12 @@
 .vacio h1{
     overflow: hidden;
 }
+.col-md-8 h5{
+    display: flex !important;
+    justify-content: center !important;
+}
+.card-body{
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: flex-end !important;
+}

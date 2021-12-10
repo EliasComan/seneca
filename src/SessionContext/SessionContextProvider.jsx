@@ -28,19 +28,19 @@ const SessionContextProvider = ({children}) =>{
         
     }
 
-    const addWishList = (imagen,nombre, user) =>{
+    const addWishList = (imagen,nombre,id,categoria, user) =>{
        const update = getFirestore().collection('wishlist').doc(user)
         update.update({
-           items:firebase.firestore.FieldValue.arrayUnion({item:{nombre:nombre, imagen:imagen}})
+           items:firebase.firestore.FieldValue.arrayUnion({item:{nombre:nombre, imagen:imagen, id:id,categoria:categoria}})
                
         })
         
     }
     
-    const deleteFromWishList = (nombre,imagen, user) =>{
+    const deleteFromWishList = (nombre,imagen,id,categoria, user) =>{
         const deleteItem = getFirestore().collection('wishlist').doc(user)
         deleteItem.update({
-            items:firebase.firestore.FieldValue.arrayRemove({item:{nombre:nombre, imagen:imagen}})
+            items:firebase.firestore.FieldValue.arrayRemove({item:{nombre:nombre, imagen:imagen,id:id,categoria:categoria}})
         })
     }
 

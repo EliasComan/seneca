@@ -1,4 +1,5 @@
 import React,{useContext, useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import { getFirestore } from '../../services/getFire';
 import {SessionContext} from '../../SessionContext/SessionContextProvider';
 import './Wishlist.css'
@@ -6,7 +7,7 @@ import './Wishlist.css'
 
 
 const WishList = () =>{
-    const [items, setItems] = useState()
+    const [items, setItems] = useState([])
     const {  user, deleteFromWishList } = useContext(SessionContext)
     useEffect(()=>{
          if (user) {
@@ -16,17 +17,18 @@ const WishList = () =>{
     },[user,items])
 
     return(
-        <>{ items.legnt > 0 ?
+        <>{ items.length > 0 ?
             items.map((i, index) => {return(
             <div key={index} className="card mb-3 text-white bg-dark" style={{maxWidth: '18rem'}} >
                 <div className="row g-0">
                     <div className="col-md-4 ">
                     <img src={i.item.imagen} className="img-fluid rounded-start" alt=""/>
                     </div>
-                    <div className="col-md-8 ">
-                    <div className="card-body ">
+                    <div className="col-md-8">
                         <h5 className="card-title">{i.item.nombre}</h5>
-                        <button  onClick={ () =>deleteFromWishList( i.item.nombre,i.item.imagen, user)} className="btn btn-light">eliminar</button>
+                    <div className="card-body">
+                        <button  onClick={ () =>deleteFromWishList( i.item.nombre,i.item.imagen,i.item.id, user)} className="btn btn-light btn-sm">eliminar</button>
+                        <Link to={`/${i.item.categoria}/${i.item.id}`} ><button className='btn btn-light btn-sm'> Ir al detail </button></Link>
                     </div>
                     </div>
                 </div>

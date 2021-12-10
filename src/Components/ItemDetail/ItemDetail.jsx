@@ -21,7 +21,7 @@ const ItemDetail = ({ imagen , nombre , precio, cantidad, id  }) => {
                     <img src={imagen} className="card-img" alt="..." />
                     </div>
                     <div className="col-md-8">
-                    <div className="card-body">
+                    <div className="">
                         <h5 className="card-title">{nombre}</h5>
                         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p className="card-text"><small className="text-muted">Precio:  {precio} ETH</small></p>

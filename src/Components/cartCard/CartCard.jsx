@@ -15,10 +15,11 @@ const CartCard = ({id, imagen, precio, cantidad, nombre, deteleItem}) =>{
                         <img src={imagen} className="img-fluid rounded-start" alt=""/>
                         </div>
                         <div className="col-md-8 ">
-                        <div className="card-body ">
+                        <div className=" ">
                             <h5 className="card-title">{nombre}</h5>
                             { precio && <p className="card-text"> precio : {Math.round(100 * (precio * cantidad))/100} ETH</p>}
-                            { cantidad && <p className="card-text"><small className="text-muted">Cantidad : {cantidad}</small></p>}
+                            { cantidad &&<p className="card-text"><small className="text-muted">Cantidad : {cantidad}</small></p>
+                            }
                             <button  onClick={() => deteleItem(id)} className="btn btn-light">eliminar</button>
                         </div>
                         </div>
