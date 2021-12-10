@@ -9,15 +9,10 @@ const WishList = () =>{
     const {  user, deleteFromWishList } = useContext(SessionContext)
     useEffect(()=>{
          if (user) {
-          const getfb = getFirestore().collection('wishlist').doc(user).get()
-       // getfb.then(res=>{console.log(res.data().items)})  
-      getfb.then( res =>{setItems(   res.data().items ); console.log(res.data().items);} )
-           // getfb.then(res => {res.data()})'
-       // getfb.then(res => res.map( i => console.log(i.data().items)) )
+            const getfb = getFirestore().collection('wishlist').doc(user).get()
+             getfb.then( res =>{setItems(   res.data().items ); console.log(res.data().items);} )
         }
     },[user,items])
-//onClick={ () => deleteFromWishList( i.item.nombre,i.item.imagen, user)}
-    //console.log(items);
 
     return(
         <>{ 
