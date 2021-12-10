@@ -1,0 +1,9 @@
+.vacio{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vacio h1{
+    overflow: hidden;
+}
