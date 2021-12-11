@@ -27,7 +27,7 @@ const WishList = () =>{
                     <div className="col-md-8">
                         <h5 className="card-title">{i.item.nombre}</h5>
                     <div className="card-body">
-                        <button  onClick={ () =>deleteFromWishList( i.item.nombre,i.item.imagen,i.item.id, user)} className="btn btn-light btn-sm">eliminar</button>
+                        <button  onClick={ () =>deleteFromWishList( i.item.nombre,i.item.imagen,i.item.id,i.item.categoria, user)} className="btn btn-light btn-sm">eliminar</button>
                         <Link to={`/${i.item.categoria}/${i.item.id}`} ><button className='btn btn-light btn-sm'> Ir al detail </button></Link>
                     </div>
                     </div>
