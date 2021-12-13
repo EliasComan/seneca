@@ -1,4 +1,4 @@
-import React,{createContext, useState} from 'react';
+import React,{createContext, useEffect, useState} from 'react';
 import 'firebase/auth';
 import firebase from 'firebase';
 import { getFirestore } from '../services/getFire';
@@ -14,6 +14,8 @@ const SessionContextProvider = ({children}) =>{
     const [userOnline, setuserOnline] = useState (false)
     const [user, setUser] = useState('')
 
+
+    useEffect( () => {
     firebase.auth().onAuthStateChanged((user) =>{
         if (user)  {
             setuserOnline(true) 
@@ -21,7 +23,7 @@ const SessionContextProvider = ({children}) =>{
         }else{ 
             setuserOnline(false)
         }
-    })
+    })},[])
     
     const wishList = (user) =>{
         getFirestore().collection('wishlist').doc(user).set({items:{item:{nombre:'',imagen:''}},})

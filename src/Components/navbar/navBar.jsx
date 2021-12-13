@@ -38,9 +38,9 @@ const NavBar = () =>{
               </li>
             </ul>
             <ul className="navbar-nav cart ">
-             <li className="nav-item">
+            {  userOnline && <li className="nav-item">
              <Link to='/wishlist'><h6><span className="badge bg-secondary">Wishlist </span> </h6></Link>
-             </li>
+             </li>}
               <li className='nav-item'>         
                 <Link   to='/cart'> 
                   <CartWidget/> 
