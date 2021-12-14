@@ -1,18 +1,21 @@
 import React, { useContext, useState } from 'react';
 import 'firebase/auth'
 import {SessionContext} from '../../SessionContext/SessionContextProvider';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
 const Register = () => {
     const [confirmacion, setConfirmacion] = useState(false)
    
-    const {setPassword,password, setemailSession, createUsser, error, sessionCreate} = useContext(SessionContext);
+    const {setPassword,password, setemailSession, createUsser,user, error, sessionCreate} = useContext(SessionContext);
     
     const confirmarContraseña = (contraseña) =>{
         contraseña === password ? setConfirmacion(true) :  setConfirmacion(false)
     }
+   
+   
     return(
-        <> 
+        <> { !user ?
             <form style={{display:'flex',flexDirection:'column', alignItems:'center', justifyContent:'center', margin:'5%'}} id='register'>
                 <h2 style={{overflow:'hidden'}}>Registro</h2>
                 {error  && <h3 style={{color:'red'}} > { error.message} </h3> }
@@ -23,20 +26,22 @@ const Register = () => {
             </div>
             <div className="mb-3">
                 <label className="form-label">Contraseña</label>
-                <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
+                <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" />
             </div>
             <div className="mb-3">
                 <label className="form-label">Confirmar contraseña</label>
-                  <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control" id="exampleInputPassword1"/>
+                  <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control"/>
             </div>
           { confirmacion ? 
            <button   onClick={ createUsser}className="btn btn-dark">Crear cuenta</button>
             :
-            <h6 stlye={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
+            <h6 style={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
             }
-            
             </form>
-        
+ 
+            :
+            <ItemListContainer/>
+            }
         
         </>
 

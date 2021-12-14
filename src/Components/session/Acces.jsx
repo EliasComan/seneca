@@ -19,11 +19,11 @@ const {setPassword, setemailSession, accesUsser,userOnline, error} = useContext(
                 {error  && <h3 style={{color:'red'}} > { error.message} </h3> }
                 <div className="mb-3" >
                     <label className="form-label">Email</label>
-                    <input type="email" className="form-control"  onChange={e => setemailSession(e.target.value)}  id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                    <input type="email" className="form-control"  onChange={e => setemailSession(e.target.value)}   aria-describedby="emailHelp"/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Password</label>
-                    <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
+                    <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" />
                 </div>
                 <button   onClick={ accesUsser }className="btn btn-dark">Inciar sesion</button>
                 
