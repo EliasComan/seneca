@@ -14,7 +14,7 @@ const SessionContextProvider = ({children}) =>{
     const [userOnline, setuserOnline] = useState (false)
     const [user, setUser] = useState('')
 
-    const signGoogle = () => {
+    useEffect ( () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
         .signInWithPopup(provider)
@@ -29,7 +29,7 @@ const SessionContextProvider = ({children}) =>{
                 var credential = error.credential;
                 console.log(errorCode,errorMessage, email, credential);
                     })
-    }
+                },[])
     
     useEffect( () => {
         firebase.auth().onAuthStateChanged((user) =>{
@@ -108,7 +108,6 @@ const SessionContextProvider = ({children}) =>{
                 wishList,
                 addWishList,
                 deleteFromWishList,
-                signGoogle
                 }}>
                 {children}
             </SessionContext.Provider>

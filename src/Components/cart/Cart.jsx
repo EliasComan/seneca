@@ -13,6 +13,7 @@ const Cart = ()  => {
     const {  clearCart, cart, deteleItem, precioCart } = useContext(CartContext);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [emailValidation, setEmailValidation] = useState('')
     const [buyid, setbuyId] = useState(null)
     const [telefono, setTelefono] = useState(0)
     const orden = {}
@@ -35,6 +36,13 @@ const Cart = ()  => {
 
         
     }
+
+    const validation = (emailvalidation) =>{
+        email === emailvalidation ? setEmailValidation(true) :setEmailValidation(false);
+
+
+        
+    }
     
   
     return(
@@ -43,16 +51,19 @@ const Cart = ()  => {
             <div className="cart-top">
             <button className="btn btn-dark" onClick={clearCart}> Limpiar carrito</button>
             <h1>Precio total: { Math.round(100 * precioCart ()) / 100 } ETH </h1> 
-            <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra </button>
+            <button  className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra </button>
             </div>
             }
                     
             <Form
             generarOrden={generarOrden}
-            setEmail={setEmail} 
+            setEmail={setEmail}
+            emailValidation={emailValidation}
+            setEmailValidation={setEmailValidation} 
             setTelefono={setTelefono}  
             setName={setName} 
             buyid = {buyid}
+            validation = {validation}
             />
             
             <div className="row row-cols-1 row-cols-md-3 g-4">  
@@ -60,7 +71,13 @@ const Cart = ()  => {
                     cart.map((i) =>  {
                         return (
                             
-                            <CartCard key={i.id}deteleItem={deteleItem} id= {i.id} nombre={i.nombre} precio={i.precio} cantidad={i.cantidad} imagen={i.imagen}/>
+                            <CartCard 
+                                key={i.id}deteleItem={deteleItem}
+                                id= {i.id}
+                                nombre={i.nombre}
+                                precio={i.precio} 
+                                cantidad={i.cantidad} 
+                                imagen={i.imagen}/>
                         )})
                     
                     :

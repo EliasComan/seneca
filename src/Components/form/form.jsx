@@ -4,7 +4,7 @@ import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 
-const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email, telefono}) => {
+const Form = ({generarOrden, setEmail,setEmailValidation,emailValidation,validation, setName, setTelefono, buyid , name, email, telefono}) => {
    const { user } = useContext(SessionContext)
  
    
@@ -29,13 +29,21 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                                    { user?
                                    <h6>{user}</h6>
                                    :
-                                   <input  type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
+                                   <>
+                                   <input  type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>
+                                   <label  className="form-label">Confirmar email.</label>
+                                  <input  type="text" name='email'  onChange={(e) => validation(e.target.value)} className="form-control" id="email" required/>
+                                  </>}
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>
                                     <input  type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono" required/>
                                 </div>
-                                <button  type="submit" onClick={ (e) =>  generarOrden(e) }  className="btn btn-dark">comprar</button>
+                               { emailValidation ?
+                                <button  type="submit" onClick={ (e) =>  {generarOrden(e)} }  className="btn btn-dark">comprar</button>
+                                :
+                                <h6 style={{color:'red'}}>El email debe ser igual en ambos casos</h6>
+                                }
                             </form>
                         </div>
                         <div className="modal-footer">
