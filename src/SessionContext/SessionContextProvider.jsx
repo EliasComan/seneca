@@ -17,18 +17,18 @@ const SessionContextProvider = ({children}) =>{
     useEffect ( () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
-        .signInWithPopup(provider)
-            .then((result) => {
-                var user = result.user.email;
-                console.log( user);})
+            .signInWithPopup(provider)
+                .then((result) => {
+                    var user = result.user.email;
+                    console.log( user);})
 
-                .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                var email = error.email;
-                var credential = error.credential;
-                console.log(errorCode,errorMessage, email, credential);
-                    })
+                    .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    var email = error.email;
+                    var credential = error.credential;
+                    console.log(errorCode,errorMessage, email, credential);
+                        })
                 },[])
     
     useEffect( () => {
@@ -65,18 +65,16 @@ const SessionContextProvider = ({children}) =>{
    
 
     const createUsser = (e) => {
-            e.preventDefault()
-            firebase.auth().createUserWithEmailAndPassword(emailSession,password)
-                .then(res => {
-                    setSessionCreate(res.user.email);
-                    wishList(res.user.email);
-                    
-                })
-                .catch(err =>{
-                    setError(err); 
-                    setSessionCreate('')})
-               
-                }
+        e.preventDefault()
+        firebase.auth().createUserWithEmailAndPassword(emailSession,password)
+            .then(res => {
+                setSessionCreate(res.user.email);
+                wishList(res.user.email);
+            })
+            .catch(err =>{
+                setError(err); 
+                setSessionCreate('')})
+            }
         
 
     const accesUsser = (e) =>{
