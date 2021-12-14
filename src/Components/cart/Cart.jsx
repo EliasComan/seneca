@@ -82,7 +82,6 @@ const Cart = ()  => {
                         <Link to='/'> <button className='btn btn-dark'> Seguir comprando </button> </Link>
                     </div>
                 }
-
             </div>
         </>
         )
