@@ -15,7 +15,7 @@ const Item = ({nombre , imagen, id,categoria }) => {
             <div className="card-body">
               <h5 className="card-title">{nombre}</h5>
             </div>
-             </Link>
+            </Link>
               <button className="btn btn-dark" onClick={ () => addWishList(imagen, nombre,id,categoria, user)} >Agregar a lista de deseos</button>
           </div>
       </div>
