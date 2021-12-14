@@ -21,8 +21,7 @@ const SessionContextProvider = ({children}) =>{
                 .then((result) => {
                     var user = result.user.email;
                     console.log( user);})
-
-                    .catch((error) => {
+                .catch((error) => {
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     var email = error.email;
