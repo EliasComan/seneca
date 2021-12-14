@@ -13,7 +13,7 @@ const Cart = ()  => {
     const {  clearCart, cart, deteleItem, precioCart } = useContext(CartContext);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [emailValidation, setEmailValidation] = useState('')
+    const [emailValidation, setEmailValidation] = useState(false)
     const [buyid, setbuyId] = useState(null)
     const [telefono, setTelefono] = useState(0)
     const orden = {}
@@ -39,9 +39,6 @@ const Cart = ()  => {
 
     const validation = (emailvalidation) =>{
         email === emailvalidation ? setEmailValidation(true) :setEmailValidation(false);
-
-
-        
     }
     
   
