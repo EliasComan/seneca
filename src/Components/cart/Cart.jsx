@@ -36,7 +36,7 @@ const Cart = ()  => {
     }
 
     const validation = (emailvalidation) =>{
-        email === emailvalidation ? setEmailValidation(true) :setEmailValidation(false);
+        email === emailvalidation ? setEmailValidation(true) : setEmailValidation(false);
     }
     
   
@@ -64,7 +64,6 @@ const Cart = ()  => {
                 { cart.length > 0 ?
                     cart.map((i) =>  {
                         return (
-                            
                             <CartCard 
                                 key={i.id}deteleItem={deteleItem}
                                 id= {i.id}
@@ -74,11 +73,11 @@ const Cart = ()  => {
                                 imagen={i.imagen}/>
                         )})
                     
-                    :
-                    <div className='empty-cart'>
-                        <h1>Aun no hay nada aqui</h1>
-                        <Link to='/'> <button className='btn btn-dark'> Seguir comprando </button> </Link>
-                    </div>
+                :
+                <div className='empty-cart'>
+                    <h1>Aun no hay nada aqui</h1>
+                    <Link to='/'> <button className='btn btn-dark'> Seguir comprando </button> </Link>
+                </div>
                 }
             </div>
         </>

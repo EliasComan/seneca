@@ -39,7 +39,7 @@ const Form = ({generarOrden, setEmail,emailValidation,validation, setName, setTe
                                     <label  className="form-label">Telefono.</label>
                                     <input  type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono" required/>
                                 </div>
-                               { emailValidation ?
+                                { emailValidation ?
                                 <button  type="submit" onClick={ (e) =>  {generarOrden(e)} }  className="btn btn-dark">comprar</button>
                                 :
                                 <h6 style={{color:'red'}}>El email debe ser igual en ambos casos</h6>
@@ -49,8 +49,8 @@ const Form = ({generarOrden, setEmail,emailValidation,validation, setName, setTe
                         <div className="modal-footer">
                             {  buyid && <p style={ {marginRight:'50%'}}>Su id de compra es : {buyid} </p> }
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
 )}
