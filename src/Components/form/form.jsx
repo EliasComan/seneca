@@ -29,7 +29,7 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                                    { user?
                                    <h6>{user}</h6>
                                    :
-                                   <input  type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
+                                   <input  type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>
