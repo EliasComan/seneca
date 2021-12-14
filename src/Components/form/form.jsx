@@ -4,7 +4,7 @@ import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 
-const Form = ({generarOrden, setEmail,setEmailValidation,emailValidation,validation, setName, setTelefono, buyid , name, email, telefono}) => {
+const Form = ({generarOrden, setEmail,emailValidation,validation, setName, setTelefono, buyid , name, email, telefono}) => {
    const { user } = useContext(SessionContext)
  
    
