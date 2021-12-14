@@ -28,7 +28,7 @@ const SessionContextProvider = ({children}) =>{
                     var credential = error.credential;
                     console.log(errorCode,errorMessage, email, credential);
                         })
-                },[])
+            },[])
     
     useEffect( () => {
         firebase.auth().onAuthStateChanged((user) =>{
@@ -48,10 +48,8 @@ const SessionContextProvider = ({children}) =>{
     const addWishList = (imagen,nombre,id,categoria, user) =>{
        const update = getFirestore().collection('wishlist').doc(user)
         update.update({
-           items:firebase.firestore.FieldValue.arrayUnion({item:{nombre:nombre, imagen:imagen, id:id,categoria:categoria}})
-               
+           items:firebase.firestore.FieldValue.arrayUnion({item:{nombre:nombre, imagen:imagen, id:id,categoria:categoria}})     
         })
-        
     }
     
     const deleteFromWishList = (nombre,imagen,id,categoria, user) =>{
