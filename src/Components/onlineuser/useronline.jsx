@@ -22,7 +22,6 @@ const UserOnline = ()=>  {
                 <h6> <span className="badge bg-secondary">/ </span></h6>
                 <h6><Link to='/register'><span className="badge bg-secondary"> Registrarse</span></Link></h6>
             </div>
-                
          }</>
 
 
