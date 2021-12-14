@@ -20,23 +20,23 @@ const Register = () => {
                 <h2 style={{overflow:'hidden'}}>Registro</h2>
                 {error  && <h3 style={{color:'red'}} > { error.message} </h3> }
                 { sessionCreate && <h3 style={{color:'green'}} > Cuenta creada! : {sessionCreate} </h3>}
-            <div className="mb-3" >
-                <label className="form-label">Email</label>
-                <input type="email" className="form-control"  onChange={e => setemailSession(e.target.value)}  id="exampleInputEmail1" aria-describedby="emailHelp"/>
-            </div>
-            <div className="mb-3">
-                <label className="form-label">Contraseña</label>
-                <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" />
-            </div>
-            <div className="mb-3">
-                <label className="form-label">Confirmar contraseña</label>
-                  <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control"/>
-            </div>
-          { confirmacion ? 
-           <button   onClick={ createUsser}className="btn btn-dark">Crear cuenta</button>
-            :
-            <h6 style={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
-            }
+                <div className="mb-3" >
+                    <label className="form-label">Email</label>
+                    <input type="email" className="form-control"  onChange={e => setemailSession(e.target.value)}  id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Contraseña</label>
+                    <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Confirmar contraseña</label>
+                    <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control"/>
+                </div>
+                { confirmacion ? 
+                <button   onClick={ createUsser}className="btn btn-dark">Crear cuenta</button>
+                :
+                <h6 style={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
+                }
             </form>
  
             :
