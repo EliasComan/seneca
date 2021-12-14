@@ -59,7 +59,6 @@ const Cart = ()  => {
             generarOrden={generarOrden}
             setEmail={setEmail}
             emailValidation={emailValidation}
-            setEmailValidation={setEmailValidation} 
             setTelefono={setTelefono}  
             setName={setName} 
             buyid = {buyid}

@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import 'firebase/auth'
 import {SessionContext} from '../../SessionContext/SessionContextProvider';
 
 
 const Register = () => {
+    const [confirmacion, setConfirmacion] = useState(false)
    
-    const {setPassword, setemailSession, createUsser, error, sessionCreate} = useContext(SessionContext);
+    const {setPassword,password, setemailSession, createUsser, error, sessionCreate} = useContext(SessionContext);
     
-
+    const confirmarContraseña = (contraseña) =>{
+        contraseña === password ? setConfirmacion(true) :  setConfirmacion(false)
+    }
     return(
         <> 
             <form style={{display:'flex',flexDirection:'column', alignItems:'center', justifyContent:'center', margin:'5%'}} id='register'>
@@ -19,10 +22,18 @@ const Register = () => {
                 <input type="email" className="form-control"  onChange={e => setemailSession(e.target.value)}  id="exampleInputEmail1" aria-describedby="emailHelp"/>
             </div>
             <div className="mb-3">
-                <label className="form-label">Password</label>
+                <label className="form-label">Contraseña</label>
                 <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
             </div>
-            <button   onClick={ createUsser}className="btn btn-dark">Submit</button>
+            <div className="mb-3">
+                <label className="form-label">Confirmar contraseña</label>
+                  <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control" id="exampleInputPassword1"/>
+            </div>
+          { confirmacion ? 
+           <button   onClick={ createUsser}className="btn btn-dark">Crear cuenta</button>
+            :
+            <h6 stlye={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
+            }
             
             </form>
         

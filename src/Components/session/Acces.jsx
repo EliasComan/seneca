@@ -25,7 +25,7 @@ const {setPassword, setemailSession, accesUsser,userOnline, error} = useContext(
                     <label className="form-label">Password</label>
                     <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
                 </div>
-                <button   onClick={ accesUsser }className="btn btn-dark">Submit</button>
+                <button   onClick={ accesUsser }className="btn btn-dark">Inciar sesion</button>
                 
 
             </form>
