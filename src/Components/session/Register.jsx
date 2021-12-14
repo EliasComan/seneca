@@ -23,6 +23,7 @@ const Register = () => {
                 <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1"/>
             </div>
             <button   onClick={ createUsser}className="btn btn-dark">Submit</button>
+            
             </form>
         
         

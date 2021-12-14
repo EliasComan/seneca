@@ -22,20 +22,20 @@ const Form = ({generarOrden, setEmail, setName, setTelefono, buyid , name, email
                             <form>
                                 <div className="mb-3">
                                     <label  className="form-label">Nombre.</label>
-                                    <input type="text" value={name} onChange={(e)=> setName(e.target.value)} className="form-control" id="nombre" aria-describedby="emailHelp" required/>
+                                    <input  type="text"  value={name} onChange={(e)=> setName(e.target.value)} className="form-control"  id="nombre" required />
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Email.</label>
                                    { user?
                                    <h6>{user}</h6>
                                    :
-                                   <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
+                                   <input  type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" required/>}
                                 </div>
                                 <div className="mb-3">
                                     <label  className="form-label">Telefono.</label>
-                                    <input type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono" required/>
+                                    <input  type="text" className="form-control" value={telefono} onChange={(e) => setTelefono(e.target.value)} id="telefono" required/>
                                 </div>
-                                <button onClick={ (e) =>  generarOrden(e) }  className="btn btn-dark">comprar</button>
+                                <button  type="submit" onClick={ (e) =>  generarOrden(e) }  className="btn btn-dark">comprar</button>
                             </form>
                         </div>
                         <div className="modal-footer">

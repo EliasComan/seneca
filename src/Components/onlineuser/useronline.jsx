@@ -5,15 +5,17 @@ import './useronline.css'
 
 const UserOnline = ()=>  {  
 
-    const { userOnline } = useContext(SessionContext)
+    const { userOnline, logOut } = useContext(SessionContext)
 
 
     return(
 
         <>{userOnline ? 
-            <div className='user-online'>
-            
-            </div>
+            <div className="wishlist">
+                <Link to='/wishlist'><h6><span className="badge bg-secondary">Wishlist </span> </h6></Link>
+                <button className="btn btn-secondary btn-sm" onClick={logOut}>Cerrar sesion</button>
+            </div> 
+
             : 
             <div className='user'>
                 <h6><Link to='/access'><span className="badge bg-secondary">Iniciar sesion   </span></Link></h6>
