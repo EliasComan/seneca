@@ -31,14 +31,14 @@ Vas a necesitar Node.js Para su ejecucion
 
 ```sh
 Para navegar la pagina en tu ordenador deberias hacer un git clone a este link : 
-- https://github.com/EliasComan/seneca
+ https://github.com/EliasComan/seneca
 
 Despues situado en la carpeta usar el comando npm install en tu terminal
 
 Por ultimo npm start en tu terminal.
 
 Ir al navegador y copiar este link : 
-- http://localhost:3000/
+ http://localhost:3000/
 ```
 
 
