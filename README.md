@@ -1,3 +1,15 @@
+# Seneca
+
+## _DEMO_
+https://stoic-golick-e52540.netlify.app/
+
+
+## DESCRIPCION
+
+Es un eccomerce principalmete, la idea es poder vender y comprar nfts con cripto, actualmente trabajando en la funcionalidad de react y mas adelante en solidity
+
+
+
 - Actualmente creado con react
 - Trabajando en la parte de solidity
 
