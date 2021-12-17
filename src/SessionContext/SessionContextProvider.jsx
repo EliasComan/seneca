@@ -15,7 +15,7 @@ const SessionContextProvider = ({children}) =>{
     const [user, setUser] = useState('')
 
     useEffect ( () => {
-        var provider = new firebase.auth.GoogleAuthProvider();
+        var provider = new firebase.auth.GoogleAuthProvider()
         firebase.auth()
             .signInWithPopup(provider)
                 .then((result) => {
