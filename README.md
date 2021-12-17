@@ -16,12 +16,12 @@ Es un eccomerce principalmete, la idea es poder vender y comprar nfts con cripto
 
 ## Proyecto e-commerce para coderhouse
 ### Frameworks:
--Node JS V:v14.18.1
--React  V: 17.0.0
--Bootstrap V: 5.0
--React-Router-Dom V: 5.3.0
--Font-Awesome V: 5.0
--Firebase V:8.4.0
+- Node JS V:v14.18.1
+- React  V: 17.0.0
+- Bootstrap V: 5.0
+- React-Router-Dom V: 5.3.0
+- Font-Awesome V: 5.0
+- Firebase V:8.4.0
 
 
 
