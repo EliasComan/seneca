@@ -7,7 +7,7 @@ import ItemListContainer from '../ItemListContainer/ItemListContainer';
 const Register = () => {
     const [confirmacion, setConfirmacion] = useState(false)
    
-    const {setPassword,password, setemailSession, createUsser,user, error, sessionCreate} = useContext(SessionContext);
+    const {setPassword,password, setemailSession, createUsser,user, error, sessionCreate, signGoogle} = useContext(SessionContext);
     
     const confirmarContraseña = (contraseña) =>{
         contraseña === password ? setConfirmacion(true) :  setConfirmacion(false)
@@ -33,10 +33,13 @@ const Register = () => {
                     <input type="password"  onChange={e => confirmarContraseña(e.target.value)} className="form-control"/>
                 </div>
                 { confirmacion ? 
-                <button   onClick={ createUsser}className="btn btn-dark">Crear cuenta</button>
+                <button   onClick={   createUsser} className="btn btn-dark">Crear cuenta</button>
                 :
                 <h6 style={{color:'red'}}>La contraseña debe ser igual en ambos casos</h6>
                 }
+                <div className='mb-3'>
+                  <button className="btn btn-dark" onClick={signGoogle}> Iniciar con google</button>
+                </div>
             </form>
  
             :

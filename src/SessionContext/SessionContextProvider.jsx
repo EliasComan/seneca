@@ -1,4 +1,4 @@
-import React,{createContext, useEffect, useState} from 'react';
+import React,{createContext,useEffect, useState} from 'react';
 import 'firebase/auth';
 import firebase from 'firebase';
 import { getFirestore } from '../services/getFire';
@@ -13,25 +13,22 @@ const SessionContextProvider = ({children}) =>{
     const [ sessionCreate, setSessionCreate] = useState()
     const [userOnline, setuserOnline] = useState (false)
     const [user, setUser] = useState('')
+    var provider = new firebase.auth.GoogleAuthProvider()
 
-    useEffect ( () => {
-        var provider = new firebase.auth.GoogleAuthProvider()
+   const signGoogle = (e)  => {
+       e.preventDefault();
         firebase.auth()
             .signInWithPopup(provider)
-                .then((result) => {
-                    var user = result.user.email;
-                    console.log( user);})
+                .then(result => {
+                   setUser(result.user.email)})
                 .catch((error) => {
                     var errorCode = error.code;
-                    var errorMessage = error.message;
-                    var email = error.email;
-                    var credential = error.credential;
-                    console.log(errorCode,errorMessage, email, credential);
+                    console.log(errorCode);
                         })
-            },[])
+            }
     
-    useEffect( () => {
-        firebase.auth().onAuthStateChanged((user) =>{
+   useEffect( () => {
+       firebase.auth().onAuthStateChanged((user) =>{
             if (user)  {
                 setuserOnline(true) 
                 setUser(user.email);
@@ -103,6 +100,7 @@ const SessionContextProvider = ({children}) =>{
                 wishList,
                 addWishList,
                 deleteFromWishList,
+                signGoogle,
                 }}>
                 {children}
             </SessionContext.Provider>

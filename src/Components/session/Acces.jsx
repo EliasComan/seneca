@@ -6,7 +6,7 @@ import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
 const Access = () =>{
-const {setPassword, setemailSession, accesUsser,userOnline, error} = useContext(SessionContext);
+const {setPassword, setemailSession, accesUsser,userOnline, error, signGoogle} = useContext(SessionContext);
     
 
     return(
@@ -25,7 +25,10 @@ const {setPassword, setemailSession, accesUsser,userOnline, error} = useContext(
                     <label className="form-label">Password</label>
                     <input type="password"  onChange={e => setPassword(e.target.value)} className="form-control" />
                 </div>
-                <button   onClick={ accesUsser }className="btn btn-dark">Inciar sesion</button>
+                <div className='mb-3'>
+                    <button   onClick={ signGoogle }className="btn btn-dark">Inciar con google </button>
+                 <button   onClick={ accesUsser }className="btn btn-dark">Inciar sesion</button>
+                </div>
             </form>
         
         
